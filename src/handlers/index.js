@@ -1,6 +1,7 @@
 import { logCurrentDir } from '../utils/logCurrentDir.js';
 import { up, cd, ls } from './navigate.js';
 import { add, cat, cp, remove, rn } from './operations.js';
+import { handleOS } from './osHandler.js';
 
 const handleInput = async (command) => {
     console.log({ command });
@@ -32,6 +33,9 @@ const handleInput = async (command) => {
                 break;
             case 'rm':
                 await remove(args);
+                break;
+            case 'os':
+                await handleOS(args);
                 break;
 
             default:
