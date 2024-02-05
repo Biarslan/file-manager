@@ -1,4 +1,5 @@
 import { logCurrentDir } from '../utils/logCurrentDir.js';
+import { calculateHash } from './hash.js';
 import { up, cd, ls } from './navigate.js';
 import { add, cat, cp, remove, rn } from './operations.js';
 import { handleOS } from './osHandler.js';
@@ -36,6 +37,9 @@ const handleInput = async (command) => {
                 break;
             case 'os':
                 await handleOS(args);
+                break;
+            case 'hash':
+                await calculateHash(args);
                 break;
 
             default:
