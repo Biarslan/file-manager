@@ -1,4 +1,5 @@
 import { logCurrentDir } from '../utils/logCurrentDir.js';
+import { compress, decompress } from './archive.js';
 import { calculateHash } from './hash.js';
 import { up, cd, ls } from './navigate.js';
 import { add, cat, cp, remove, rn } from './operations.js';
@@ -40,6 +41,12 @@ const handleInput = async (command) => {
                 break;
             case 'hash':
                 await calculateHash(args);
+                break;
+            case 'compress':
+                await compress(args);
+                break;
+            case 'decompress':
+                await decompress(args);
                 break;
 
             default:
