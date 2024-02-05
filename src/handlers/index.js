@@ -6,7 +6,6 @@ import { add, cat, cp, remove, rn } from './operations.js';
 import { handleOS } from './osHandler.js';
 
 const handleInput = async (command) => {
-    console.log({ command });
     const commandArray = command.split(' ');
     const operation = commandArray[0];
     const args = commandArray.slice(1).join(' ');
